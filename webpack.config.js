@@ -40,6 +40,18 @@ const config = {
           }
         ]
       },
+      // pug loader
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: true
+            }
+          }
+        ]
+      },
       // css / stylus loader
       {
         test: /\.(css|styl)$/,
@@ -73,7 +85,12 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
+      filename: 'something.html',
       template: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, 'src', 'views/index.pug')
     }),
     new ExtractTextPlugin('./css/style.css'),
     new DashboardPlugin()

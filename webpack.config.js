@@ -7,7 +7,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin')
 const config = {
   context: path.join(__dirname, 'src'),
   entry: {
-    app: './index.js'
+    app: './js/app.js'
   },
   output: {
     path: path.join(__dirname, 'public'), // Folder to store generated bundle

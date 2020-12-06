@@ -38,5 +38,4 @@ jspm_packages/
 .env*
 !.env.sample
 
-# public folder
-public/
+dist/
